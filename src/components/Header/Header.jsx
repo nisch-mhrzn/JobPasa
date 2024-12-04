@@ -1,12 +1,14 @@
-
-
 const Header = () => {
   return (
-    <div className="mt-10 flex flex-col gap-5 items-center justify-center text-white">
-    <h1 className="text-5xl font-bold">Your ideal job awaits, start the search</h1>
-    <p className="text-xl">Get latest job openings that best suits you </p>
+    <div className="mt-10 px-4 flex flex-col gap-5 items-center text-center text-white">
+      <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+        Your ideal job awaits, start the search
+      </h1>
+      <p className="text-lg md:text-xl text-gray-300">
+        Get the latest job openings that best suit you
+      </p>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
