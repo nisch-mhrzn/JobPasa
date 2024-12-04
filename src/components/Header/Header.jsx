@@ -1,3 +1,5 @@
+// import DarkModeToggle from "../DarkModeToggle";
+
 const Header = () => {
   return (
     <div className="mt-10 px-4 flex flex-col gap-5 items-center text-center text-white">
@@ -7,6 +9,7 @@ const Header = () => {
       <p className="text-lg md:text-xl text-gray-300">
         Get the latest job openings that best suit you
       </p>
+      {/* <DarkModeToggle /> */}
     </div>
   );
 };

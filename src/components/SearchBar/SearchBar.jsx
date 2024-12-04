@@ -8,6 +8,7 @@ const SearchBar = (props) => {
     type: "",
     experience: "",
   });
+
   const handleChange = (e) => {
     setJobCriteria((prevState) => ({
       ...prevState,
@@ -19,15 +20,16 @@ const SearchBar = (props) => {
   const search = async () => {
     await props.fetchJobsCustom(jobCriteria);
   };
+
   return (
     <div className="flex gap-4 my-10 justify-center px-10">
       <select
         onChange={handleChange}
         name="title"
         value={jobCriteria.title}
-        className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+        className="w-64 py-3 pl-4 bg-zinc-200 dark:bg-zinc-700 text-gray-900 dark:text-white font-semibold rounded-md"
       >
-        <option value="" disabled hidden selected>
+        <option value="" disabled hidden>
           Job Role
         </option>
         <option value="iOS Developer">iOS Developer</option>
@@ -40,7 +42,7 @@ const SearchBar = (props) => {
         onChange={handleChange}
         name="type"
         value={jobCriteria.type}
-        className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+        className="w-64 py-3 pl-4 bg-zinc-200 dark:bg-zinc-700 text-gray-900 dark:text-white font-semibold rounded-md"
       >
         <option value="" disabled hidden>
           Job Type
@@ -53,7 +55,7 @@ const SearchBar = (props) => {
         onChange={handleChange}
         name="location"
         value={jobCriteria.location}
-        className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+        className="w-64 py-3 pl-4 bg-zinc-200 dark:bg-zinc-700 text-gray-900 dark:text-white font-semibold rounded-md"
       >
         <option value="" disabled hidden>
           Location
@@ -66,7 +68,7 @@ const SearchBar = (props) => {
         onChange={handleChange}
         name="experience"
         value={jobCriteria.experience}
-        className="w-64 py-3 pl-4 bg-zinc-200 font-semibold rounded-md"
+        className="w-64 py-3 pl-4 bg-zinc-200 dark:bg-zinc-700 text-gray-900 dark:text-white font-semibold rounded-md"
       >
         <option value="" disabled hidden>
           Experience
@@ -78,13 +80,14 @@ const SearchBar = (props) => {
       </select>
       <button
         onClick={search}
-        className="w-64 bg-blue-500 textwhite font-bold py-3 rounded-md"
+        className="w-64 bg-blue-500 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800 text-white font-bold py-3 rounded-md"
       >
         Search
       </button>
     </div>
   );
 };
+
 SearchBar.propTypes = {
   fetchJobsCustom: PropTypes.func.isRequired,
 };
